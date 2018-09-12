@@ -24,7 +24,6 @@ public class Drawing extends Applet {
         //DRAW STRING, DRAW PLOIGON, DRAW POLILINE
         //DRAW OVAL -  COLOR i, RANDOM X,Y,
         Color mySecondBlue = new Color(0x3d3191);
-        mySecondBlue.
 
     }
 }
