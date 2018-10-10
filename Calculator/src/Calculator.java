@@ -1,9 +1,11 @@
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
-public class Calculator extends Applet implements TextListener {
+public class Calculator extends Applet implements TextListener, FocusListener {
 
     Dimension appletSize;
 
@@ -49,6 +51,10 @@ public class Calculator extends Applet implements TextListener {
         input2.addTextListener(this);
         sign.addTextListener(this);
 
+        input1.addFocusListener(this);
+        input2.addFocusListener(this);
+        sign.addFocusListener(this);
+
         add(input1Label);
         add(input1);
 
@@ -60,6 +66,7 @@ public class Calculator extends Applet implements TextListener {
 
         add(outputLabel);
         add(output);
+
 
 
 
@@ -105,6 +112,17 @@ public class Calculator extends Applet implements TextListener {
 
         System.out.println(e.getID() + " " + e.getSource());
     }
+    public void focusLost(FocusEvent e) {
+
+        System.out.println(e.getSource() + " " + e.getID());
+
+    }
+
+    public void focusGained(FocusEvent e) {
+
+    }
+
+
 
 
 }
